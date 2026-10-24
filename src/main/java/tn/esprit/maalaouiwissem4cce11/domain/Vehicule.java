@@ -11,19 +11,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-
 @Entity
-
 @Table(name = "vehicule")
-
 @Getter
-
 @Setter
-
 @NoArgsConstructor
-
 @AllArgsConstructor
-
 public class Vehicule {
 
     @Id
