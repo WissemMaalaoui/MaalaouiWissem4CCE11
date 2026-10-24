@@ -22,5 +22,8 @@ public class Paiement {
     private Long idPaiement;
     private BigDecimal montant;
     private LocalDate datePaiement;
+    @ManyToOne
+    private Contrat contrat;
+
 
 }

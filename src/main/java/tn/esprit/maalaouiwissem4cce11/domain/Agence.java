@@ -2,6 +2,8 @@ package tn.esprit.maalaouiwissem4cce11.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Set;
+
 @Getter
 @NoArgsConstructor
 @Setter
@@ -18,4 +20,8 @@ public class Agence {
     private String ville;
     private String adresse;
     private String telephone;
+    @OneToMany(mappedBy="agence",fetch = FetchType.LAZY)
+    Set<Vehicule> vehicules;
+    @OneToMany(mappedBy="agence",fetch = FetchType.LAZY)
+    Set<Employe> employees;
 }

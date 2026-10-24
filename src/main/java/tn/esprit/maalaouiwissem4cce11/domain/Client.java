@@ -8,6 +8,8 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "client")
 @Getter
@@ -24,4 +26,7 @@ public class Client {
     private String telephone;
     private String numPermis;
     private LocalDate dateInscription;
+    @OneToMany(mappedBy="client",fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    Set<Reservation> reservations;
+
 }

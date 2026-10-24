@@ -11,6 +11,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "vehicule")
 @Getter
@@ -52,5 +55,14 @@ public class Vehicule {
     @Column(nullable = false, length = 20)
 
     private StatutVehicule statut;
+
+    @ManyToOne
+    private Agence agence;
+    @ManyToMany
+    Set<Equipement> equipment =new HashSet<>();
+    @OneToMany(mappedBy="vehicule",fetch = FetchType.LAZY)
+    Set<Reservation> reservations;
+    @OneToMany(mappedBy="vehicule",fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
+    Set<Maintenance> maintenances;
 
 }
