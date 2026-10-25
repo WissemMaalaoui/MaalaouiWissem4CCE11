@@ -55,7 +55,6 @@ public class Vehicule {
     @Column(nullable = false, length = 20)
 
     private StatutVehicule statut;
-
     @ManyToOne
     private Agence agence;
     @ManyToMany
