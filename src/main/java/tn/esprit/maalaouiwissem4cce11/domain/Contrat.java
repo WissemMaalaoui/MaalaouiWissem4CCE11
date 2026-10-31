@@ -1,5 +1,6 @@
 package tn.esprit.maalaouiwissem4cce11.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,6 +27,7 @@ public class Contrat {
     private BigDecimal montantTotal;
     private boolean valide;
     @OneToOne(mappedBy="contrat")
+    @JsonIgnore
     private Reservation reservation;
     @OneToMany(mappedBy = "contrat",orphanRemoval = true,cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Paiement> paiements = new ArrayList<>();

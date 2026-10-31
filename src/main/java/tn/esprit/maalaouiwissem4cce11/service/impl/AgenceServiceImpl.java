@@ -4,11 +4,11 @@ import org.springframework.stereotype.Service;
 import tn.esprit.maalaouiwissem4cce11.domain.Agence;
 import tn.esprit.maalaouiwissem4cce11.exception.ResourceNotFoundException;
 import tn.esprit.maalaouiwissem4cce11.repository.IAgenceRepository;
-import tn.esprit.maalaouiwissem4cce11.service.IAgenceServices;
+import tn.esprit.maalaouiwissem4cce11.service.IAgenceService;
 import java.util.List;
 @Service
 @RequiredArgsConstructor
-public class AgenceServiceImpl implements IAgenceServices {
+public class AgenceServiceImpl implements IAgenceService {
     private final IAgenceRepository agenceRepository;
     @Override
     public Agence create(Agence agence) {

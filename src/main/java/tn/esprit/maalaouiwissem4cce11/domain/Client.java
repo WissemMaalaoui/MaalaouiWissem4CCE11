@@ -1,5 +1,6 @@
 package tn.esprit.maalaouiwissem4cce11.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,7 +27,8 @@ public class Client {
     private String telephone;
     private String numPermis;
     private LocalDate dateInscription;
-    @OneToMany(mappedBy="client",fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy="client", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @JsonIgnore
     Set<Reservation> reservations;
 
 }

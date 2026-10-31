@@ -1,5 +1,6 @@
 package tn.esprit.maalaouiwissem4cce11.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import lombok.AllArgsConstructor;
@@ -58,9 +59,11 @@ public class Vehicule {
     private Agence agence;
     @ManyToMany
     Set<Equipement> equipment =new HashSet<>();
-    @OneToMany(mappedBy="vehicule",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy="vehicule", fetch = FetchType.LAZY)
+    @JsonIgnore
     Set<Reservation> reservations;
-    @OneToMany(mappedBy="vehicule",fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
-    Set<Maintenance> maintenances;
 
+    @OneToMany(mappedBy="vehicule", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @JsonIgnore
+    Set<Maintenance> maintenances;
 }

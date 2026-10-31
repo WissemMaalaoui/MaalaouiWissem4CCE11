@@ -1,5 +1,6 @@
 package tn.esprit.maalaouiwissem4cce11.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,6 +23,7 @@ public class Equipement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idEquipement;
     private String libelle;
-    @ManyToMany(mappedBy = "equipment",fetch = FetchType.LAZY)
-    Set<Vehicule> vehicule =new HashSet<>();
+    @ManyToMany(mappedBy = "equipment", fetch = FetchType.LAZY)
+    @JsonIgnore
+    Set<Vehicule> vehicule = new HashSet<>();
 }

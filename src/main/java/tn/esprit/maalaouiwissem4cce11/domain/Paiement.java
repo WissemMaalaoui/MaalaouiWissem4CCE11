@@ -1,5 +1,4 @@
 package tn.esprit.maalaouiwissem4cce11.domain;
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,7 +21,7 @@ public class Paiement {
     private Long idPaiement;
     private BigDecimal montant;
     private LocalDate datePaiement;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Contrat contrat;
 
 

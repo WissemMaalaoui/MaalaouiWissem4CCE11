@@ -5,7 +5,7 @@ import tn.esprit.maalaouiwissem4cce11.domain.Agence;
 
 import java.util.List;
 
-public interface IAgenceServices {
+public interface IAgenceService {
     Agence create(Agence agence);
     Agence update(Long id,Agence agence);
     void deleteById(Long id);

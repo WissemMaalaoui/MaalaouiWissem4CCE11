@@ -1,4 +1,5 @@
 package tn.esprit.maalaouiwissem4cce11.domain;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,8 +21,10 @@ public class Agence {
     private String ville;
     private String adresse;
     private String telephone;
-    @OneToMany(mappedBy="agence",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy="agence", fetch = FetchType.LAZY)
+    @JsonIgnore
     Set<Vehicule> vehicules;
-    @OneToMany(mappedBy="agence",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy="agence", fetch = FetchType.LAZY)
+    @JsonIgnore
     Set<Employe> employees;
 }
